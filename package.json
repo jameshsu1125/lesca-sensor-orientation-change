@@ -1,7 +1,7 @@
 {
-	"name": "npm-base-package",
-	"version": "1.0.0",
-	"description": "npm-base-package",
+	"name": "lesca-sensor-oc",
+	"version": "1.0.1",
+	"description": "get Angle when orientation change on mobile device.",
 	"main": "lib/index.js",
 	"scripts": {
 		"start": "webpack-dev-server --mode development",
