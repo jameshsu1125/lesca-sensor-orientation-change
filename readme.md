@@ -3,19 +3,24 @@
 # Installation
 
 ```sh
-$ npm install <package> --save
+$ npm install lesca-sensor-oc --save
 ```
 
 # Usage
 
 ```javascript
-import foo from 'foo';
+import OC from 'lesca-sensor-oc';
+
+OC.init({
+	callback: (e) => {
+		console.log(e); // 0, 90, -90
+	},
+});
 ```
 
 # Methods
 
-| Left-Aligned  | Center Aligned  | Right Aligned |
-| :------------ | :-------------: | ------------: |
-| col 3 is      | some wordy text |        \$1600 |
-| col 2 is      |    centered     |          \$12 |
-| zebra stripes |    are neat     |           \$1 |
+| method           | options  |           description            | default |
+| :--------------- | :------: | :------------------------------: | ------: |
+| init({callback}) | callback | get angle when orentation change |         |
+| destory()        |          |           remove event           |         |
