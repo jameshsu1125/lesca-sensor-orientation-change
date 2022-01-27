@@ -1,6 +1,6 @@
 {
 	"name": "lesca-sensor-orientation-change",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"description": "get angle when orientation change on mobile device.",
 	"main": "lib/index.js",
 	"scripts": {
@@ -49,10 +49,10 @@
 		"webpack-dev-server": "^4.7.3"
 	},
 	"author": "jamehsu1125 <jameshsu1125@gmail.com>",
-	"homepage": "https://github.com/jameshsu1125/lesca-sensor-oc",
+	"homepage": "https://github.com/jameshsu1125/lesca-sensor-orientation-change",
 	"repository": {
 		"type": "git",
-		"url": "git@github.com:jameshsu1125/lesca-sensor-oc.git"
+		"url": "git@github.com:jameshsu1125/lesca-sensor-orientation-change.git"
 	},
 	"dependencies": {
 		"mobile-detect": "^1.4.5"
