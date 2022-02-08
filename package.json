@@ -1,6 +1,6 @@
 {
 	"name": "lesca-sensor-orientation-change",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "get angle when orientation change on mobile device.",
 	"main": "lib/index.js",
 	"scripts": {
