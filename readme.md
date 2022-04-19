@@ -24,7 +24,7 @@ npm install lesca-sensor-orientation-change --save
 import OrientationChange from 'lesca-sensor-orientation-change';
 
 OrientationChange.addListener((e) => {
-  console.log(e); // get angle 0, 90, -90
+  console.log(e); // landscape or portrait
 });
 ```
 

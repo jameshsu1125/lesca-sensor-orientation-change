@@ -1,25 +1,24 @@
-import { Button, ButtonGroup } from '@mui/material';
+import Qrocde from 'lesca-react-qrcode';
 import { useEffect, useState } from 'react';
 import OrientationChange from '../../lib';
-import Qrocde from 'lesca-react-qrcode';
 
 const Demo = () => {
-  const [state, setState] = useState(0);
+  const [state, setState] = useState('');
 
   useEffect(() => {
     OrientationChange.addListener((e) => {
       setState(e);
-      console.log(e);
     });
   }, []);
 
   return (
     <div className='Demo'>
       <h2>Demo</h2>
-      <Qrocde content={window.location.href} size='320' />
       <pre>
         <code>{JSON.stringify(state)}</code>
       </pre>
+      <h4>test on mobile</h4>
+      <Qrocde content={window.location.href} size='320' />
     </div>
   );
 };

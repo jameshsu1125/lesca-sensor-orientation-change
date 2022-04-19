@@ -18,8 +18,9 @@ const error = () => {
 };
 
 const call = () => {
-  const angle = window.orientation ? screen.orientation.angle : window.orientation;
-  property.callback(angle ?? false);
+  let a = 'portrait';
+  if (window.innerWidth > window.innerHeight) a = 'landscape';
+  property.callback(a);
 };
 
 const addListener = (callback = defaultCallback) => {
@@ -32,7 +33,7 @@ const addListener = (callback = defaultCallback) => {
 
   if (window.DeviceOrientationEvent) {
     call();
-    window.addEventListener('orientationchange', call);
+    window.onresize = call;
   } else error();
 };
 
