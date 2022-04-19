@@ -2,6 +2,8 @@
 
 # Installation
 
+https://jameshsu1125.github.io/lesca-sensor-orientation-change/
+
 ```sh
 $ npm install lesca-sensor-orientation-change --save
 ```
@@ -12,7 +14,7 @@ $ npm install lesca-sensor-orientation-change --save
 import OrientationChange from 'lesca-sensor-orientation-change';
 
 OrientationChange.addListener((e) => {
-	console.log(e); // get angle 0, 90, -90
+  console.log(e); // get angle 0, 90, -90
 });
 ```
 

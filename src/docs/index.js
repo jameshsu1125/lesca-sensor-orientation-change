@@ -1,40 +1,35 @@
-import { render } from 'react-dom';
-import { Navation, Code } from './components';
-import Demo from './demo';
-import Qrcode from 'lesca-react-qrcode';
+import { Container } from '@mui/material';
+import { ThemeProvider } from '@mui/material/styles';
+import { useState } from 'react';
+import { createRoot } from 'react-dom/client';
+import Navigation from './components/navigation';
+import Demo from './pages/demo';
+import Usage from './pages/usage';
 import './styles.less';
+import { theme } from './theme';
 
-const homepage = 'https://github.com/jameshsu1125/lesca-sensor-orientation-change';
-const name = 'lesca-sensor-orientation-change';
-const description = 'get angle when orientation change on mobile device.';
+const App = () => {
+  const [state, setState] = useState('demo');
 
-const Page = () => {
-	return (
-		<>
-			<Navation />
-			<div className='content'>
-				<div>
-					<h1>{name}</h1>
-					<figcaption>{description}</figcaption>
-				</div>
-				<div>
-					<h2>install</h2>
-					<Code code={`npm install ${name} --save`} theme='markup' />
-				</div>
-				<div>
-					<h2>test on mobile</h2>
-					<Qrcode content={window.location.href} size='300' />
-				</div>
-				<div>
-					<Demo />
-				</div>
-				<div>
-					<h2>Usage</h2>
-					<a href={homepage}>Documentation</a>
-				</div>
-			</div>
-		</>
-	);
+  const appendPage = () => {
+    switch (state) {
+      default:
+      case 'demo':
+        return <Demo />;
+
+      case 'usage':
+        return <Usage />;
+    }
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Navigation setState={setState} state={state} />
+      <Container style={{ paddingTop: '70px' }} maxWidth='lg'>
+        {appendPage()}
+      </Container>
+    </ThemeProvider>
+  );
 };
 
-render(<Page />, document.getElementById('app'));
+createRoot(document.getElementById('app')).render(<App />);
