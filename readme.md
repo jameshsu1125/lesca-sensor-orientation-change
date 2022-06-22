@@ -42,5 +42,4 @@ OrientationChange.addEventListener((e) => {
 
 ### Features
 
-- TypeScript
 - maintain if necessary
