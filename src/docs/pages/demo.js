@@ -6,7 +6,7 @@ const Demo = () => {
   const [state, setState] = useState('');
 
   useEffect(() => {
-    OrientationChange.addListener((e) => {
+    OrientationChange.addEventListener((e) => {
       setState(e);
     });
   }, []);

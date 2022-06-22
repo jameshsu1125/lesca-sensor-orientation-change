@@ -11,7 +11,7 @@ const codes = [
     title: '2. Usage',
     code: `import OrientationChange from 'lesca-sensor-orientation-change';
 
-OrientationChange.addListener((e) => {
+OrientationChange.addEventListener((e) => {
   console.log(e); // landscape or portrait
 });`,
     type: 'js',

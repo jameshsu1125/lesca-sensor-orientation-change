@@ -1,9 +1,6 @@
 import MobileDetect from 'mobile-detect';
 
-const defaultCallback = (e) => {
-  console.log(e);
-};
-
+const defaultCallback = (orientation: string) => console.log(orientation);
 const property = { callback: defaultCallback };
 
 const get = () => {
@@ -18,12 +15,20 @@ const error = () => {
 };
 
 const call = () => {
-  let a = 'portrait';
-  if (window.innerWidth > window.innerHeight) a = 'landscape';
-  property.callback(a);
+  let status;
+  switch (window.orientation) {
+    case -90:
+    case 90:
+      status = 'landscape';
+      break;
+
+    default:
+      status = 'portrait';
+  }
+  property.callback(status);
 };
 
-const addListener = (callback = defaultCallback) => {
+const addEventListener = (callback = defaultCallback) => {
   property.callback = callback;
 
   if (get() === 'desktop') {
@@ -31,15 +36,13 @@ const addListener = (callback = defaultCallback) => {
     return;
   }
 
-  if (window.DeviceOrientationEvent) {
-    call();
-    window.onresize = call;
-  } else error();
+  window.addEventListener('orientationchange', call);
+  call();
 };
 
 const destory = () => {
   window.removeEventListener('orientationchange', call);
 };
 
-const OrientationChange = { addListener, destory };
+const OrientationChange = { addEventListener, destory };
 export default OrientationChange;
