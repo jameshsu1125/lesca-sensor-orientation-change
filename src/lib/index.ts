@@ -40,9 +40,9 @@ const addEventListener = (callback = defaultCallback) => {
   call();
 };
 
-const destory = () => {
+const destroy = () => {
   window.removeEventListener('orientationchange', call);
 };
 
-const OrientationChange = { addEventListener, destory };
+const OrientationChange = { addEventListener, destroy };
 export default OrientationChange;

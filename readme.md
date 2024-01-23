@@ -36,7 +36,7 @@ OrientationChange.addEventListener((e) => {
 | method                                             |           description            | default |
 | :------------------------------------------------- | :------------------------------: | ------: |
 | .**addEventListener**(**eventHandler**:_function_) | get angle when orentation change |         |
-| .**destory**()                                     |           remove event           |         |
+| .**destroy**()                                     |           remove event           |         |
 
 ### Prop
 
