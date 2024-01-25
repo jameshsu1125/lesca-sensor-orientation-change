@@ -1,6 +1,6 @@
 import MobileDetect from 'mobile-detect';
 
-const defaultCallback = (orientation: string) => console.log(orientation);
+const defaultCallback = (orientation: 'landscape' | 'portrait') => console.log(orientation);
 const property = { callback: defaultCallback };
 
 const get = () => {
@@ -15,7 +15,7 @@ const error = () => {
 };
 
 const call = () => {
-  let status;
+  let status: 'landscape' | 'portrait' = 'landscape';
   switch (window.orientation) {
     case -90:
     case 90:
