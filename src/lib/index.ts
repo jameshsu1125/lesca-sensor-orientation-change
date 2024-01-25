@@ -11,7 +11,7 @@ const get = () => {
 };
 
 const error = () => {
-  console.warn('[lesca-sensor-orientation-change]: desktop not support orientation.');
+  console.warn('[lesca-sensor-orientation-change]: Desktop does not support orientation.');
 };
 
 const call = () => {
